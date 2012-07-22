@@ -8,6 +8,12 @@ class app_App extends System_Object {
 
     public function Run() {
 
+        $ts = new System_TimeSpan(10, 10, 10);
+        echo $ts;
+
+        echo System_Environment::NewLine;
+        echo System_Environment::NewLine;
+
         $t = System_Tuple::Create('aa', 'bb', 'cc');
         echo $t->Item1;
         echo System_Environment::NewLine;

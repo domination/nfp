@@ -62,6 +62,8 @@ final class System extends System_Object {
                     return $obj->$fname($arguments[0], $arguments[1], $arguments[2]);
                 } elseif ($c == 4) {
                     return $obj->$fname($arguments[0], $arguments[1], $arguments[2], $arguments[3]);
+                } elseif ($c == 5) {
+                    return $obj->$fname($arguments[0], $arguments[1], $arguments[2], $arguments[3], $arguments[4]);
                 } else {
                     throw new ErrorException('System_Object __get count params');
                 }

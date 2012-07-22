@@ -57,69 +57,9 @@ final class System_Console extends System_Object {
 ?>
 <?php
 
-//http://msdn.microsoft.com/en-us/library/system.tuple.aspx
-
-class Tuple extends Object implements IStructuralEquatable, IStructuralComparable {
-
-    public static function Create($t1, $t2 = null, $t3 = null, $t4 = null, $t5 = null, $t6 = null, $t7 = null, $t8 = null) {
-        $args = func_get_args();
-        return new Tuple(count($args), $args);
-    }
-
-    private $values;
-    private $count;
-
-    public function __construct($count, $values) {
-        $this->count = $count;
-        $this->values = $values;
-    }
-
-    public function __get($name) {
-        if (substr($name, 0, 4) == 'Item') {
-            $tmp = explode('Item', $name);
-            $num = $tmp[1];
-            if ($num <= $this->count)
-                return $this->values[$num - 1];
-        }
-        return null;
-    }
-
-    public function CompareTo($obj, IComparer $comparer = null) {
-        
-    }
-
-    public function Equals($other, IEqualityComparer $comparer) {
-        
-    }
-
-    public function GetHashCode(IEqualityComparer $comparer) {
-        
-    }
-
-}
-
-?><?php
-
 //http://msdn.microsoft.com/en-us/library/system.timespan.aspx
 
 class TimeSpan extends Object {
-
-    public $Hours;
-    public $Minutes;
-    public $Seconds;
-    public $Milliseconds;
-    public $Ticks;
-    public $TotalDays;
-    public $TotalHours;
-    public $TotalMilliseconds;
-    public $TotalMinutes;
-    public $TotalSeconds;
-
-    const TicksPerMillisecond = 10000;
-    const TicksPerSecond = 10000000;
-    const TicksPerMinute = 600000000;
-    const TicksPerHour = 36000000000;
-    const TicksPerDay = 864000000000;
 
     public function __construct($ticks) {
         $this->Ticks = $ticks;
@@ -139,13 +79,6 @@ class TimeSpan extends Object {
     public function ToString() {
         return sprintf('%s%02d:%02d:%02d.%07d', ($this->Days > 0 ? $this->Days . '.' : ''), $this->Hours, $this->Minutes, $this->Seconds, round(($this->TotalSeconds - (int) $this->TotalSeconds) * TimeSpan::TicksPerSecond));
     }
-
-    public function Equals($obj) {
-        if ($obj != null && $this->Ticks == $obj->Ticks)
-            return true;
-        return false;
-    }
-
 }
 
 ?><?php

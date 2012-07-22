@@ -11,7 +11,7 @@ interface System_IFormattable {
      * @param System_IFormatProvider $formatProvider The provider to use to format the value.
      * @return System_String The value of the current instance in the specified format.
      */
-    public function ToString($format, System_IFormatProvider $formatProvider);
+    public function ToString___($format, System_IFormatProvider $formatProvider);
 }
 
 ?>

@@ -36,7 +36,7 @@ class System_Tuple extends System_Object implements System_IComparable {
      * [8]
      * Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1, T2, T3, T4, T5, T6, T7, T8)	Creates a new 8-tuple, or octuple.
      */
-    public static function Create($item1 = null, $item2 = null, $item3 = null, $item4 = null, $item5 = null, $item6 = null, $item7 = null, $item8 = null) {
+    public static function Create($item1, $item2 = null, $item3 = null, $item4 = null, $item5 = null, $item6 = null, $item7 = null, $item8 = null) {
         $items = func_get_args();
         if (count($items) < 9)
             return new System_Tuple($items);

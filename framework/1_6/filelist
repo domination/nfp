@@ -6,6 +6,7 @@ Object.php
     Math.php
     Random.php
     Version.php
+    TimeSpan.php
     Tuple.php
 Exception.php
     SystemException.php
@@ -46,8 +47,6 @@ ValueType.php
     Int16.php
     Int32.php
     Int64.php
-    TimeSpan.php
-    
     Void.php
 String.php
 
