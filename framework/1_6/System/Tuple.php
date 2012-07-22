@@ -17,16 +17,38 @@ class System_Tuple extends System_Object implements System_IComparable {
     //////////////////
     //
     //<editor-fold desc="Methods" defaultstate="collapsed">
-    //
-    // Create<T1>(T1)	Creates a new 1-tuple, or singleton.
-    // Create<T1, T2>(T1, T2)	Creates a new 2-tuple, or pair.
-    // Create<T1, T2, T3>(T1, T2, T3)	Creates a new 3-tuple, or triple.
-    // Create<T1, T2, T3, T4>(T1, T2, T3, T4)	Creates a new 4-tuple, or quadruple.
-    // Create<T1, T2, T3, T4, T5>(T1, T2, T3, T4, T5)	Creates a new 5-tuple, or quintuple.
-    // Create<T1, T2, T3, T4, T5, T6>(T1, T2, T3, T4, T5, T6)	Creates a new 6-tuple, or sextuple.
-    // Create<T1, T2, T3, T4, T5, T6, T7>(T1, T2, T3, T4, T5, T6, T7)	Creates a new 7-tuple, or septuple.
-    // Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1, T2, T3, T4, T5, T6, T7, T8)	Creates a new 8-tuple, or octuple.
-    //
+
+    /**
+     * [1]
+     * Create<T1>(T1)	Creates a new 1-tuple, or singleton.
+     * [2]
+     * Create<T1, T2>(T1, T2)	Creates a new 2-tuple, or pair.
+     * [3]
+     * Create<T1, T2, T3>(T1, T2, T3)	Creates a new 3-tuple, or triple.
+     * [4]
+     * Create<T1, T2, T3, T4>(T1, T2, T3, T4)	Creates a new 4-tuple, or quadruple.
+     * [5]
+     * Create<T1, T2, T3, T4, T5>(T1, T2, T3, T4, T5)	Creates a new 5-tuple, or quintuple.
+     * [6]
+     * Create<T1, T2, T3, T4, T5, T6>(T1, T2, T3, T4, T5, T6)	Creates a new 6-tuple, or sextuple.
+     * [7]
+     * Create<T1, T2, T3, T4, T5, T6, T7>(T1, T2, T3, T4, T5, T6, T7)	Creates a new 7-tuple, or septuple.
+     * [8]
+     * Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1, T2, T3, T4, T5, T6, T7, T8)	Creates a new 8-tuple, or octuple.
+     */
+    public static function Create($item1 = null, $item2 = null, $item3 = null, $item4 = null, $item5 = null, $item6 = null, $item7 = null, $item8 = null) {
+        $items = func_get_args();
+        if (count($items) < 9)
+            return new System_Tuple($items);
+        else {
+            throw new ErrorException();
+        }
+    }
+
+    protected function System_Tuple___cstor1($items) {
+        $this->items = $items;
+    }
+
     //</editor-fold>
     //
     //<editor-fold desc="Properties" defaultstate="collapsed">
@@ -39,7 +61,9 @@ class System_Tuple extends System_Object implements System_IComparable {
     // Item6	Gets the value of the current Tuple<T1, T2, T3, T4, T5, T6, T7, TRest> object's sixth component.
     // Item7	Gets the value of the current Tuple<T1, T2, T3, T4, T5, T6, T7, TRest> object's seventh component.
     // Rest	Gets the current Tuple<T1, T2, T3, T4, T5, T6, T7, TRest> object's remaining components.
-    // 
+    //
+    private $items;
+
     //</editor-fold>
     //
     //<editor-fold desc="Methods" defaultstate="collapsed">
@@ -98,10 +122,27 @@ class System_Tuple extends System_Object implements System_IComparable {
     //</editor-fold>
     //
     //</editor-fold>
-    
+    //
+    //<editor-fold desc="PHP magic methods" defaultstate="collapsed">
+
+    public function __get($name) {
+        if (substr($name, 0, 4) == 'Item') {
+            $number = (int) substr($name, 4);
+            if ($number > 0 && $number <= count($this->items)) {
+                return $this->items[$number - 1];
+            } else {
+                throw new System_ArgumentOutOfRangeException();
+            }
+        }
+        return parent::__get($name);
+    }
+
+    //</editor-fold>
+
     public function CompareTo___T($other) {
         
     }
+
 }
 
 ?>
