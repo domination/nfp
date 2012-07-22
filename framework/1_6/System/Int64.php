@@ -1,10 +1,13 @@
 <?php
 
+if (!defined('PHP_INT_MIN')) {
+    define('PHP_INT_MIN', (int) (PHP_INT_MAX + 1));
+}
+
 /**
  * Represents a 64-bit signed integer.
  */
 class System_Int64 extends System_ValueType implements System_IComparable, System_IFormattable, System_IEquatable {
-
     //
     // System_IConvertible
     ///////////////////////
@@ -21,19 +24,37 @@ class System_Int64 extends System_ValueType implements System_IComparable, Syste
     // ToString()	Converts the numeric value of this instance to its equivalent string representation. (Overrides ValueType.ToString().)
     // ToString(IFormatProvider)	Converts the numeric value of this instance to its equivalent string representation using the specified culture-specific format information.
     // ToString(String, IFormatProvider)	Converts the numeric value of this instance to its equivalent string representation using the specified format and culture-specific format information.
+    // TryParse(String, NumberStyles, IFormatProvider, Int64)	Converts the string representation of a number in a specified style and culture-specific format to its 64-bit signed integer equivalent. A return value indicates whether the conversion succeeded or failed.
+    //</editor-fold>
+    //
+    //<editor-fold desc="Fields" defaultstate="collapsed">
 
-    public function ToString($format, System_IFormatProvider $formatProvider) {
+    /**
+     * Represents the largest possible value of an Int64. This field is constant.
+     */
+
+    const MaxValue = PHP_INT_MAX;
+
+    /**
+     * Represents the smallest possible value of an Int64. This field is constant.
+     */
+    const MinValue = PHP_INT_MIN;
+
+    // 
+    //</editor-fold>
+
+    public function CompareTo___T($other) {
         
     }
 
-    // TryParse(String, NumberStyles, IFormatProvider, Int64)	Converts the string representation of a number in a specified style and culture-specific format to its 64-bit signed integer equivalent. A return value indicates whether the conversion succeeded or failed.
-    //</editor-fold>
-    //<editor-fold desc="Fields" defaultstate="collapsed">
-    //
-    // MaxValue	Represents the largest possible value of an Int64. This field is constant.
-    // MinValue	Represents the smallest possible value of an Int64. This field is constant.
-    // 
-    //</editor-fold>
+    public function Equals___T($other) {
+        
+    }
+
+    public function ToString___($format, System_IFormatProvider $formatProvider) {
+        
+    }
+
 }
 
 ?>

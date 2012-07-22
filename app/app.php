@@ -8,10 +8,21 @@ class app_App extends System_Object {
 
     public function Run() {
 
-        $ts = new System_TimeSpan(10, 10, 10);
-        echo $ts;
+        $ts1 = new System_TimeSpan(10, 10, 10);
+        echo $ts1;
 
         echo System_Environment::NewLine;
+
+        $ts = System_TimeSpan::FromHours(-12);
+        echo $ts;
+        echo System_Environment::NewLine;
+        echo $ts->Duration();
+        echo System_Environment::NewLine;
+        echo $ts->Negate();
+        echo System_Environment::NewLine;
+        
+        echo $ts1->Add($ts->Duration());
+        
         echo System_Environment::NewLine;
 
         $t = System_Tuple::Create('aa', 'bb', 'cc');

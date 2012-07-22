@@ -6,6 +6,7 @@ Object.php
     Math.php
     Random.php
     Version.php
+..ValueType.php
     TimeSpan.php
     Tuple.php
 Exception.php
