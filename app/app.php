@@ -24,7 +24,7 @@ class app_App extends System_Object {
         echo System_Environment::NewLine;
 
         $r = new System_Random();
-        $buffer = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        $buffer = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         echo $r->NextBytes($buffer);
         print_r($buffer);
         echo System_Environment::NewLine;
