@@ -45,10 +45,6 @@ class System_Tuple extends System_Object implements System_IComparable {
         }
     }
 
-    protected function System_Tuple___cstor1($items) {
-        $this->items = $items;
-    }
-
     //</editor-fold>
     //
     //<editor-fold desc="Properties" defaultstate="collapsed">
@@ -124,6 +120,10 @@ class System_Tuple extends System_Object implements System_IComparable {
     //</editor-fold>
     //
     //<editor-fold desc="PHP magic methods" defaultstate="collapsed">
+
+    public function __construct($items) {
+        $this->items = $items;
+    }
 
     public function __get($name) {
         if (substr($name, 0, 4) == 'Item') {

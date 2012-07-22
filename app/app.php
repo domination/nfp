@@ -8,6 +8,21 @@ class app_App extends System_Object {
 
     public function Run() {
 
+        $t = System_Tuple::Create('aa', 'bb', 'cc');
+        echo $t->Item1;
+        echo System_Environment::NewLine;
+        echo $t->Item2;
+        echo System_Environment::NewLine;
+        echo $t->Item3;
+        echo System_Environment::NewLine;
+        try {
+            echo $t->Item4;
+        } catch (System_Exception $ex) {
+            echo $ex;
+        }
+        echo System_Environment::NewLine;
+        echo System_Environment::NewLine;
+
         $r = new System_Random();
         $buffer = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         echo $r->NextBytes($buffer);
