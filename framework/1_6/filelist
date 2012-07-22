@@ -1,0 +1,56 @@
+System.php
+Object.php
+    Environment.php
+    EventArgs.php
+    GC.php
+    Math.php
+    Random.php
+    Version.php
+Exception.php
+    SystemException.php
+        ArgumentException.php
+            ArgumentNullException.php
+            ArgumentOutOfRangeException.php
+        ArithmeticException.php
+            DivideByZeroException.php
+            OverflowException.php
+        BadImageFormatException.php
+        FormatException.php
+        IndexOutOfRangeException.php
+        InvalidCastException.php
+        InvalidOperationException.php
+        NotImplementedException.php
+        NotSupportedException.php
+            PlatformNotSupportedException.php
+        NullReferenceException.php
+        TimeoutException.php
+
+ICloneable.php
+IComparable.php
+IDisposable.php
+IEquatable.php
+IFormatProvider.php
+IFormattable.php
+
+Console.php
+Uri.php
+
+ValueType.php
+    Enum.php
+    Boolean.php
+    Byte.php
+    Char.php
+    DateTime.php
+    Double.php
+    Int16.php
+    Int32.php
+    Int64.php
+    TimeSpan.php
+    Tuple.php
+    Void.php
+String.php
+
+Activator.php
+Type.php
+
+System.Reflection
